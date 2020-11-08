@@ -87,6 +87,7 @@ return [
 
     // Spain
     'ES' => \Umulmrum\Holiday\Provider\Spain\Spain::class,
+    'ES-CL' => \Umulmrum\Holiday\Provider\Spain\CastileAndLeon::class,
 
     // Switzerland
     'CH' => \Umulmrum\Holiday\Provider\Switzerland\Switzerland::class,

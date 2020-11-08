@@ -366,6 +366,10 @@
         <source>reformation_day</source>
         <target>Reformation Day</target>
       </trans-unit>
+      <trans-unit id="regional_day">
+        <source>regional_day</source>
+        <target>Regional Day</target>
+      </trans-unit>
       <trans-unit id="religious">
         <source>religious</source>
         <target>Religious</target>
