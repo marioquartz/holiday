@@ -281,6 +281,10 @@ Currently only the Gregorian calendar is supported, for years < 10000.
  
 ## Supported Countries
 
+![World Map](/doc/world.svg)
+
+(map created by simplemaps.com - licensed under MIT)
+
 - Austria (incl. Burgenland, Carinthia, Lower Austria, Salzburg, Styria, Tyrol, UpperAustria, Vienna, Vorarlberg)
 - Belgium
 - Brazil
@@ -291,8 +295,10 @@ Currently only the Gregorian calendar is supported, for years < 10000.
 - Italy (incl. South Tyrol)
 - Liechtenstein
 - Luxembourg
+- Mexico
 - Poland
 - Russia
+- Spain (common holidays only yet)
 - Switzerland (incl. Aargau, Appenzell-Ausserrhoden, Appenzell-Innerrhoden, Basel Landschaft, Basel Stadt, Bern, Fribourg, Geneva, Glarus, Grisons, Jura, Lucerne, Neuchatel, Nidwalden, Obwalden, Schaffhausen, Schwyz, Solothurn, St Gallen, Thurgau, Ticino, Uri, Valais, Vaud, Zuerich, Zug)
 - USA (federal holidays only yet)
 

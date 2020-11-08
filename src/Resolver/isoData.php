@@ -76,11 +76,17 @@ return [
     // Luxembourg
     'LU' => \Umulmrum\Holiday\Provider\Luxembourg\Luxembourg::class,
 
+    // Mexico
+    'MX' => \Umulmrum\Holiday\Provider\Mexico\Mexico::class,
+
     // Poland
     'PL' => \Umulmrum\Holiday\Provider\Poland\Poland::class,
 
     // Russia
     'RU' => \Umulmrum\Holiday\Provider\Russia\Russia::class,
+
+    // Spain
+    'ES' => \Umulmrum\Holiday\Provider\Spain\Spain::class,
 
     // Switzerland
     'CH' => \Umulmrum\Holiday\Provider\Switzerland\Switzerland::class,
