@@ -23,6 +23,7 @@ class CastileAndLeon extends Spain
 {
     use ChristianHolidaysTrait;
     use CommonHolidaysTrait;
+    use CompensatoryDaysTrait;
 
     /**
      * {@inheritdoc}
@@ -30,10 +31,16 @@ class CastileAndLeon extends Spain
     public function calculateHolidaysForYear(int $year): HolidayList
     {
         $holidays = parent::calculateHolidaysForYear($year);
-        $holidays->add($this->getMaundyThursday($year));
+        $holidays->add($this->getMaundyThursday($year, HolidayType::OFFICIAL | HolidayType::DAY_OFF));
+        $holidays->add($this->getRegionalDay($year));
         $this->addCompensatoryConstitutionDay($holidays, $year);
         $this->addCompensatoryAllSaints($holidays, $year);
 
         return $holidays;
+    }
+
+    private function getRegionalDay(int $year, int $additionalType = HolidayType::OTHER): Holiday
+    {
+        return Holiday::create(HolidayName::REGIONAL_DAY, "{$year}-04-23", HolidayType::OFFICIAL | HolidayType::DAY_OFF | $additionalType);
     }
 }
