@@ -48,7 +48,7 @@ class Holiday
 
     public static function createFromDateTime(string $name, \DateTimeInterface $date, int $type = HolidayType::OTHER): self
     {
-        return new self($name, $date->format(static::DISPLAY_DATE_FORMAT), $type);
+        return new self($name, $date->format((string) static::DISPLAY_DATE_FORMAT), $type);
     }
 
     public function getName(): string
@@ -61,9 +61,14 @@ class Holiday
         return $this->simpleDate;
     }
 
+    /**
+     * @psalm-suppress all Although the return value can be false here, this error should always
+     *                 be detected at development time. So we do not handle it to not complicate things too much here.
+     *                 Shit in, shit out :-)
+     */
     public function getDate(\DateTimeZone $dateTimeZone = null): \DateTimeImmutable
     {
-        return \DateTimeImmutable::createFromFormat(static::CREATE_DATE_FORMAT, $this->simpleDate, $dateTimeZone);
+        return \DateTimeImmutable::createFromFormat((string) static::CREATE_DATE_FORMAT, $this->simpleDate, $dateTimeZone);
     }
 
     public function getType(): int
