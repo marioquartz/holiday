@@ -60,12 +60,7 @@ trait Assert
     {
         $this->assertInt($value);
         if ($value < Weekday::SUNDAY || $value > Weekday::SATURDAY) {
-            throw new \InvalidArgumentException(\sprintf(
-                'Invalid weekday "%s". Expected value between %s and %s.',
-                $value,
-                Weekday::SUNDAY,
-                Weekday::SATURDAY
-            ));
+            throw new \InvalidArgumentException(\sprintf('Invalid weekday "%s". Expected value between %s and %s.', $value, Weekday::SUNDAY, Weekday::SATURDAY));
         }
     }
 }

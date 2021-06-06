@@ -11,13 +11,15 @@
 
 namespace Umulmrum\Holiday\Provider\Spain;
 
+use Umulmrum\Holiday\Constant\HolidayName;
 use Umulmrum\Holiday\Constant\HolidayType;
+use Umulmrum\Holiday\Model\Holiday;
 use Umulmrum\Holiday\Model\HolidayList;
 use Umulmrum\Holiday\Provider\CommonHolidaysTrait;
 use Umulmrum\Holiday\Provider\CompensatoryDaysTrait;
 use Umulmrum\Holiday\Provider\Religion\ChristianHolidaysTrait;
 
-class BalearicIslands extends Spain
+class Cantabria extends Spain
 {
     use ChristianHolidaysTrait;
     use CommonHolidaysTrait;
@@ -31,9 +33,13 @@ class BalearicIslands extends Spain
         $holidays = parent::calculateHolidaysForYear($year);
         $holidays->add($this->getMaundyThursday($year, HolidayType::OFFICIAL | HolidayType::DAY_OFF));
         $holidays->add($this->getEasterMonday($year));
-        $this->addCompensatoryConstitutionDay($holidays, $year);
-        $holidays->add($this->getSecondChristmasDay($year));
+        $holidays->add($this->getRegionalDay($year));
 
         return $holidays;
+    }
+
+    private function getRegionalDay(int $year, int $additionalType = HolidayType::OTHER): Holiday
+    {
+        return Holiday::create(HolidayName::REGIONAL_DAY, "{$year}-07-28", HolidayType::OFFICIAL | HolidayType::DAY_OFF | $additionalType);
     }
 }

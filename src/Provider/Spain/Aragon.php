@@ -16,7 +16,7 @@ use Umulmrum\Holiday\Constant\HolidayType;
 use Umulmrum\Holiday\Model\Holiday;
 use Umulmrum\Holiday\Model\HolidayList;
 use Umulmrum\Holiday\Provider\CommonHolidaysTrait;
-use Umulmrum\Holiday\Provider\HolidayProviderInterface;
+use Umulmrum\Holiday\Provider\CompensatoryDaysTrait;
 use Umulmrum\Holiday\Provider\Religion\ChristianHolidaysTrait;
 
 class Aragon extends Spain

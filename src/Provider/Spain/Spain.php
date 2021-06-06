@@ -63,24 +63,24 @@ class Spain implements HolidayProviderInterface
 
     /**
         Compensatory Day is optional. Only is added in some regions
-    **/
-    public function addCompensatoryConstitutionDay(HolidayList $holidays, int $year):void
+     **/
+    public function addCompensatoryConstitutionDay(HolidayList $holidays, int $year): void
     {
         if ($year >= 1983) {
-            foreach ($holidays as $key => $value) {
-                if (HolidayName::CONSTITUTION_DAY === $value->getName() && date($year.'-12-06') === $value->getSimpleDate()) {
-                    $holiday=$value;
+            foreach ($holidays as $date) {
+                if (HolidayName::CONSTITUTION_DAY === $date->getName() && date($year.'-12-06') === $date->getSimpleDate()) {
+                    $holiday = $date;
                 }
             }
             $this->addLaterCompensatoryDay($holidays, $holiday, HolidayType::OTHER);
         }
     }
 
-    public function addCompensatoryAllSaints(HolidayList $holidays, int $year):void
+    public function addCompensatoryAllSaints(HolidayList $holidays, int $year): void
     {
-        foreach ($holidays as $key => $value) {
-            if (HolidayName::ALL_SAINTS_DAY === $value->getName() && date($year.'-11-01') === $value->getSimpleDate()) {
-                $holiday=$value;
+        foreach ($holidays as $date) {
+            if (HolidayName::ALL_SAINTS_DAY === $date->getName() && date($year.'-11-01') === $date->getSimpleDate()) {
+                $holiday = $date;
             }
         }
         $this->addLaterCompensatoryDay($holidays, $holiday, HolidayType::OTHER);
