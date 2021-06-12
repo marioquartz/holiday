@@ -34,6 +34,7 @@ class Cantabria extends Spain
         $holidays->add($this->getMaundyThursday($year, HolidayType::OFFICIAL | HolidayType::DAY_OFF));
         $holidays->add($this->getEasterMonday($year));
         $holidays->add($this->getRegionalDay($year));
+        $holidays->add($this->getDayOfBienAparecida($year));
 
         return $holidays;
     }
@@ -41,5 +42,10 @@ class Cantabria extends Spain
     private function getRegionalDay(int $year, int $additionalType = HolidayType::OTHER): Holiday
     {
         return Holiday::create(HolidayName::REGIONAL_DAY, "{$year}-07-28", HolidayType::OFFICIAL | HolidayType::DAY_OFF | $additionalType);
+    }
+
+    private function getDayOfBienAparecida(int $year): Holiday
+    {
+        return Holiday::create(HolidayName::DAYOFBIENAPARECIDA, "{$year}-09-15", HolidayType::OFFICIAL | HolidayType::RELIGIOUS);
     }
 }

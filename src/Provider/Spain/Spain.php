@@ -85,4 +85,17 @@ class Spain implements HolidayProviderInterface
         }
         $this->addLaterCompensatoryDay($holidays, $holiday, HolidayType::OTHER);
     }
+
+    /**
+        In some regions some holidays are removed and substituted by others holidays.
+        I need get the index for removing
+     */
+    public function getIndexFromDate($holidays, $date): int
+    {
+        foreach ($holidays as $index => $holiday) {
+            if ($date === $holiday->getSimpleDate()) {
+                return $index;
+            }
+        }
+    }
 }

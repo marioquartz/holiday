@@ -130,6 +130,10 @@
         <source>danish_national_holiday</source>
         <target>Grundlovsdag</target>
       </trans-unit>
+      <trans-unit id="day_of_bien_aparecida">
+        <source>day_of_bien_aparecida</source>
+        <target>Day of Bien Aparecida</target>
+      </trans-unit>
       <trans-unit id="day_of_the_dead">
         <source>day_of_the_dead</source>
         <target>Day of the Dead</target>
